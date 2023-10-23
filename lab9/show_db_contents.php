@@ -4,9 +4,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$db_host="mysql-123-server.mysql.database.azure.com";        //Change this
-$db_user="wrhuniasqs";        //Change this
-$db_pass="Strength123";        //Change this
+$db_host="localhost";        //Change this
+$db_user="root";        //Change this
+$db_pass="oghenefejirofogeh";        //Change this
 $db_name="z_url_set_1";     //Do not change
 
 $db_conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
