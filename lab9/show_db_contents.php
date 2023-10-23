@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$db_host="mysql-123-server.mysql.database.azure.com";        //Change this
+$db_host="20.119.8.45";        //Change this
 $db_user="wrhuniasqs";        //Change this
 $db_pass="8A6X6FP04318SR6D$";        //Change this
 $db_name="z_url_set_1";     //Do not change
