@@ -1,6 +1,6 @@
 <?php
 // Specify the path to the non-public folder
-$file_path = 'path_to_non_public_folder/data.txt';
+$file_path = 'webtechcontainer/data.txt';
 
 if (file_exists($file_path)) {
     // Read the file into an array
