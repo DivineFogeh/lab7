@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $first_name . ' ' . $last_name . "\n";
 
     // Specify the path to the non-public folder
-    $file_path = 'webtechcontainer/data.txt';
+    $file_path = 'https://webtechstorage1.blob.core.windows.net/webtechcontainer/data.txt';
 
     // Append data to the file
     file_put_contents($file_path, $data, FILE_APPEND);
