@@ -1,6 +1,6 @@
 <?php
 // Specify the path to the non-public folder
-$file_path = 'webtechcontainer/data.txt';
+$file_path = 'https://webtechstorage1.blob.core.windows.net/webtechcontainer/data.txt';
 
 if (file_exists($file_path)) {
     // Read the file into an array
