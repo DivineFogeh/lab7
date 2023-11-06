@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $first_name . ' ' . $last_name . "\n";
 
     // Specify the path to the non-public folder
-    $file_path = 'path_to_non_public_folder/data.txt';
+    $file_path = 'webtechcontainer/data.txt';
 
     // Append data to the file
     file_put_contents($file_path, $data, FILE_APPEND);
