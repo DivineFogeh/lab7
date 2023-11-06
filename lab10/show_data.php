@@ -1,28 +1,18 @@
 <?php
-require 'vendor/autoload.php'; // Include the Azure SDK for PHP
+// Specify the path to the non-public folder where data.txt is stored
+$file_path = '/path/to/private-folder/data.txt';
 
-use Azure\Storage\Blob\BlobRestProxy;
-
-$connectionString = "DefaultEndpointsProtocol=https;AccountName=webtechstorage1;AccountKey=EUluiINM7OGl3WssBRpho7cNpZSzDjN0n5/ew7Le44YBhiieO0LFPqeA4iv1VzcPpWj2nfbikAn8+AStMfcfkg==";
-
-$blobClient = BlobRestProxy::createBlobService($connectionString);
-
-$containerName = 'webtechcontainer';
-$blobName = 'data.txt';
-
-if ($blobClient->doesBlobExist($containerName, $blobName)) {
-    // Read the blob's content
-    $blobData = $blobClient->getBlob($containerName, $blobName);
-
+if (file_exists($file_path)) {
+    // Read the file into an array
+    $file_contents = file($file_path, FILE_IGNORE_NEW_LINES);
+    
     // Output the data as a table
-    $data = $blobData->getContentStream();
-
     echo '<table>';
-    while (($line = fgets($data)) !== false) {
+    foreach ($file_contents as $line) {
         echo '<tr><td>' . htmlspecialchars($line) . '</td></tr>';
     }
     echo '</table>';
 } else {
-    echo 'Blob not found.';
+    echo 'File not found.';
 }
 ?>
