@@ -10,18 +10,14 @@ $blobClient = BlobRestProxy::createBlobService($connectionString);
 $containerName = 'webtechcontainer';
 $blobName = 'data.txt';
 
+$blobUrl = 'https://webtechstorage1.blob.core.windows.net/webtechcontainer/data.txt';
+
 if ($blobClient->doesBlobExist($containerName, $blobName)) {
-    // Read the blob's content
-    $blobData = $blobClient->getBlob($containerName, $blobName);
+    // Read the blob's content using the $blobUrl
+    $blobData = $blobClient->getBlob($containerName, $blobName, $blobUrl);
 
-    // Output the data as a table
-    $data = $blobData->getContentStream();
-
-    echo '<table>';
-    while (($line = fgets($data)) !== false) {
-        echo '<tr><td>' . htmlspecialchars($line) . '</td></tr>';
-    }
-    echo '</table>';
+    // Output the data as needed
+    // ...
 } else {
     echo 'Blob not found.';
 }
